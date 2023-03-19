@@ -6,11 +6,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _sidewaysMovement = 120f;
     [SerializeField] float _fallDeathHeight = -1f;
 
-    void Start()
-    {
-        
-    }
-
     void FixedUpdate()
     {        
         if (Input.GetKey("d"))
