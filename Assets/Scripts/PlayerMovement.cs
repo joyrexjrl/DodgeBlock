@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Rigidbody rb;
-    [SerializeField] float sidewaysMovement = 120f;
-    [SerializeField] float fallDeathHeight = -1f;
+    [SerializeField] Rigidbody _rb;
+    [SerializeField] float _sidewaysMovement = 120f;
+    [SerializeField] float _fallDeathHeight = -1f;
 
     void Start()
     {
@@ -15,13 +15,13 @@ public class PlayerMovement : MonoBehaviour
     {        
         if (Input.GetKey("d"))
         {
-            rb.AddForce(sidewaysMovement * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            _rb.AddForce(_sidewaysMovement * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
         if (Input.GetKey("a"))
         {
-            rb.AddForce(-sidewaysMovement * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            _rb.AddForce(-_sidewaysMovement * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
-        if(rb.position.y < fallDeathHeight)
+        if(_rb.position.y < _fallDeathHeight)
         {
             FindObjectOfType<GameManager>().EndGame();
         }

@@ -4,7 +4,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] float slowness = 10f;
+    [SerializeField] float _slowness = 10f;
 
     bool gameHasEnded = false;
 
@@ -24,11 +24,11 @@ public class GameManager : MonoBehaviour
 
     IEnumerator RestartLevel()
     {
-        Time.timeScale = 1f / slowness;
-        Time.fixedDeltaTime = Time.fixedDeltaTime / slowness;
-        yield return new WaitForSeconds(1f / slowness);
+        Time.timeScale = 1f / _slowness;
+        Time.fixedDeltaTime = Time.fixedDeltaTime / _slowness;
+        yield return new WaitForSeconds(1f / _slowness);
         Time.timeScale = 1f;
-        Time.fixedDeltaTime = Time.fixedDeltaTime * slowness;
+        Time.fixedDeltaTime = Time.fixedDeltaTime * _slowness;
         Restart();
     }
     

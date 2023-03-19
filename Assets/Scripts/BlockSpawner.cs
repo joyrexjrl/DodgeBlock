@@ -1,30 +1,38 @@
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class BlockSpawner : MonoBehaviour
 {
-    [SerializeField] Transform[] spawnPoints;
-    [SerializeField] GameObject blockPrefab;
-    [SerializeField] float timeToSpawn = 2f;
-    [SerializeField] float timeBetweenWaves = 1f;
+    [SerializeField] Transform[] _spawnPoints;
+    [SerializeField] GameObject _blockPrefab;
+    [SerializeField] float _timeToSpawn = 2f;
+    [SerializeField] float _timeBetweenWaves = 1f;
+
+    ObjectPool<GameObject> _pool;
+
+    void Update()
+    {
+        
+    }
 
     void FixedUpdate()
     {
-        if(Time.time >= timeToSpawn)
+        if(Time.time >= _timeToSpawn)
         {
             SpawnBlocks();
-            timeToSpawn = Time.time + timeBetweenWaves;
+            _timeToSpawn = Time.time + _timeBetweenWaves;
         }
         
     }
 
     void SpawnBlocks()
     {
-        int randomIndex = Random.Range(0, spawnPoints.Length);
-        for (int i = 0; i < spawnPoints.Length; i++)
+        int randomIndex = Random.Range(0, _spawnPoints.Length);
+        for (int i = 0; i < _spawnPoints.Length; i++)
         {
             if (randomIndex != i)
             {
-                Instantiate(blockPrefab, spawnPoints[i].position, Quaternion.identity);
+                Instantiate(_blockPrefab, _spawnPoints[i].position, Quaternion.identity);
             }
         }
     }
