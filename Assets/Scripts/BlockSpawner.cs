@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class BlockSpawner : MonoBehaviour
 {
@@ -7,8 +6,6 @@ public class BlockSpawner : MonoBehaviour
     [SerializeField] GameObject _blockPrefab;
     [SerializeField] float _timeToSpawn = 2f;
     [SerializeField] float _timeBetweenWaves = 1f;
-
-    ObjectPool<GameObject> _pool;
 
     void Update()
     {
