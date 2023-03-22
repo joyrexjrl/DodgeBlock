@@ -11,6 +11,6 @@ public class Score : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-        _scoreText.text = $"Score: {_timer.ToString("2")}";
+        _scoreText.text = $"Score: {_timer:0.00}";
     }
 }
