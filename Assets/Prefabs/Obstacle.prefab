@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3540855407010947493}
   - component: {fileID: 3540855407010947492}
   - component: {fileID: -6186010266845823573}
-  - component: {fileID: -6203176165452714027}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Obstacle
@@ -132,22 +131,3 @@ MonoBehaviour:
   _blockSpeed: 30
   _gravityScale: 2
   _isReverseBlock: 0
---- !u!114 &-6203176165452714027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3540855407010947495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4c0aeccbb487454abd1c3369a854aa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lerpTime: 1
-  _colors:
-  - {r: 1, g: 0, b: 0, a: 0}
-  - {r: 1, g: 0.983102, b: 0, a: 0}
-  - {r: 0.14285731, g: 1, b: 0, a: 0}
-  - {r: 0, g: 0.35876274, b: 1, a: 0}
-  - {r: 1, g: 0, b: 0.87002325, a: 0}
