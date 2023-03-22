@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 524901358}
   - component: {fileID: 524901357}
   - component: {fileID: 524901356}
+  - component: {fileID: 524901360}
   m_Layer: 6
   m_Name: AntiGravGround
   m_TagString: Environment
@@ -381,6 +382,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &524901360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524901355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c0aeccbb487454abd1c3369a854aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lerpTime: 0.5
+  _colors:
+  - {r: 0.7137255, g: 0.83921576, b: 1, a: 0}
+  - {r: 0.57852554, g: 1, b: 0, a: 0}
+  - {r: 0, g: 0.9804158, b: 1, a: 0}
+  - {r: 0.543818, g: 0, b: 1, a: 0}
+  - {r: 1, g: 0, b: 0.4631133, a: 0}
 --- !u!1 &547519109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1059,7 @@ GameObject:
   - component: {fileID: 1642682163}
   - component: {fileID: 1642682162}
   - component: {fileID: 1642682161}
+  - component: {fileID: 1642682165}
   m_Layer: 6
   m_Name: Ground
   m_TagString: Environment
@@ -1124,6 +1145,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1642682165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642682160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c0aeccbb487454abd1c3369a854aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lerpTime: 0.5
+  _colors:
+  - {r: 0.7019608, g: 0.8235295, b: 1, a: 0}
+  - {r: 0.57852554, g: 1, b: 0, a: 0}
+  - {r: 0, g: 0.9804158, b: 1, a: 0}
+  - {r: 0.543818, g: 0, b: 1, a: 0}
+  - {r: 1, g: 0, b: 0.4631133, a: 0}
 --- !u!1 &1647434750
 GameObject:
   m_ObjectHideFlags: 0
