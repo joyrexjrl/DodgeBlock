@@ -1287,6 +1287,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1737412689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1737412691}
+  - component: {fileID: 1737412690}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1737412690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737412689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a25da16514795f4469a27599cfb470fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Obstacle
+    prefab: {fileID: 3540855407010947495, guid: 05c0f788872965142b5d67c3138751fd, type: 3}
+    size: 50
+  - tag: JumpObstacle
+    prefab: {fileID: 2024463879122949719, guid: 3d2de89979bf0e3459d7dcf78dd89bbb, type: 3}
+    size: 20
+  - tag: ReverseObstacle
+    prefab: {fileID: 4305159285392468068, guid: bb0a9e21bbcfdbe49bf9ed8b7dafec98, type: 3}
+    size: 50
+  - tag: ReverseJumpObstacle
+    prefab: {fileID: 4556750669199926516, guid: 9c9d30edae042a5498b73082b287d90d, type: 3}
+    size: 20
+--- !u!4 &1737412691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737412689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1770499731
 GameObject:
   m_ObjectHideFlags: 0
