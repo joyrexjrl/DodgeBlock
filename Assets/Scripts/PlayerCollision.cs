@@ -5,6 +5,7 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField] Rigidbody _rb;
     [SerializeField] PlayerMovement _movement;
     [SerializeField] float _jumpForce = 20f;
+    [SerializeField] bool _isReversed = false;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -19,7 +20,17 @@ public class PlayerCollision : MonoBehaviour
     {
         if (trigger.tag == "JumpBox")
         {
-            _rb.AddForce(0, _jumpForce, 0, ForceMode.VelocityChange);
+            if (!_isReversed)
+            {
+                _isReversed = true;
+                _rb.AddForce(0, _jumpForce, 0, ForceMode.VelocityChange);
+            }
+            else
+            {
+                _isReversed = false;
+                _rb.AddForce(0, -_jumpForce, 0, ForceMode.VelocityChange);
+            }
+            
         }
     }
 }
