@@ -18,7 +18,7 @@ public class ColorChanger : MonoBehaviour
 
     void Update()
     {
-        cubeMeshRenderer.material.color = Color.Lerp(cubeMeshRenderer.material.color, _colors[_colorIndex], _lerpTime * Time.deltaTime);
+        cubeMeshRenderer.material.color = Color.Lerp(cubeMeshRenderer.material.color, _colors[_colorIndex], _lerpTime * Time.deltaTime);  
 
         _timer = Mathf.Lerp(_timer, 1f, _lerpTime * Time.deltaTime);
         if(_timer > .9f)
