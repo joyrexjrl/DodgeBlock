@@ -7,6 +7,8 @@ public class BlockMovement : MonoBehaviour, IPooledObject
     [SerializeField] float _gravityScale = 2f;
     [SerializeField] bool _isReverseBlock = false;
 
+    float _blockKill = -30f;
+
     public void OnObjectSpawn()
     {
         Debug.Log("block object being called from pooler by the interface.");
@@ -21,7 +23,6 @@ public class BlockMovement : MonoBehaviour, IPooledObject
     {
         _blockRb.AddForce(0, 0, -_blockSpeed * Time.deltaTime, ForceMode.VelocityChange);
         if (_isReverseBlock) _blockRb.AddForce(Vector3.up * _gravityScale * _blockRb.mass, ForceMode.Force);
-        if (transform.position.y < -2f) Destroy(gameObject);
-        if (transform.position.y > 25f && _isReverseBlock) Destroy(gameObject);        
+        if (transform.position.z < _blockKill) Destroy(gameObject);
     }
 }
