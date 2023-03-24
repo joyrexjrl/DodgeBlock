@@ -21,7 +21,7 @@ public class ObjectPooler : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;
+        Instance = this;        
     }
 
     #endregion
@@ -29,7 +29,7 @@ public class ObjectPooler : MonoBehaviour
     void Start()
     {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
-        foreach(Pool pool in pools)
+        foreach (Pool pool in pools)
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
             for (int i = 0; i < pool.size; i++)
