@@ -129,5 +129,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _blockRb: {fileID: 4305159285392468071}
   _blockSpeed: 30
-  _gravityScale: 4
+  _gravityScale: 3
   _isReverseBlock: 1
