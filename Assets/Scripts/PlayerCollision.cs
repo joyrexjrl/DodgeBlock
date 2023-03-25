@@ -13,10 +13,7 @@ public class PlayerCollision : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_isInAir)
-        {
-            StartCoroutine(RandomSpin());
-        }
+        if (_isInAir) StartCoroutine(RandomSpin());
     }
 
     void OnCollisionEnter(Collision collision)

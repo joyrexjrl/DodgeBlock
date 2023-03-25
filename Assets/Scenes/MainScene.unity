@@ -466,7 +466,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 1
   m_AngularDrag: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
@@ -542,7 +542,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616114855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 12.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -987,7 +987,7 @@ MonoBehaviour:
   _timeToSpawn: 2
   _timeBetweenWaves: 1
   _isReverseBlockSpawner: 0
-  _isUsingPooledObjects: 0
+  _isUsingPooledObjects: 1
 --- !u!4 &1292094942
 Transform:
   m_ObjectHideFlags: 0
@@ -1268,7 +1268,7 @@ MonoBehaviour:
   _timeToSpawn: 2
   _timeBetweenWaves: 1
   _isReverseBlockSpawner: 1
-  _isUsingPooledObjects: 0
+  _isUsingPooledObjects: 1
 --- !u!4 &1647434752
 Transform:
   m_ObjectHideFlags: 0
@@ -1321,16 +1321,16 @@ MonoBehaviour:
   pools:
   - tag: Obstacle
     prefab: {fileID: 3540855407010947495, guid: 05c0f788872965142b5d67c3138751fd, type: 3}
-    size: 50
+    size: 20
   - tag: JumpObstacle
     prefab: {fileID: 2024463879122949719, guid: 3d2de89979bf0e3459d7dcf78dd89bbb, type: 3}
-    size: 20
+    size: 5
   - tag: ReverseObstacle
     prefab: {fileID: 4305159285392468068, guid: bb0a9e21bbcfdbe49bf9ed8b7dafec98, type: 3}
-    size: 50
+    size: 20
   - tag: ReverseJumpObstacle
     prefab: {fileID: 4556750669199926516, guid: 9c9d30edae042a5498b73082b287d90d, type: 3}
-    size: 20
+    size: 5
 --- !u!4 &1737412691
 Transform:
   m_ObjectHideFlags: 0

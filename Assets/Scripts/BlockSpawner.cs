@@ -10,11 +10,13 @@ public class BlockSpawner : MonoBehaviour
     [SerializeField] float _timeToSpawn = 2f;
     [SerializeField] float _timeBetweenWaves = 1f;
     [SerializeField] bool _isReverseBlockSpawner = false;
-    [SerializeField] bool _isUsingPooledObjects = false;
-
     ObjectPooler objectPooler;
 
-    void Awake()
+    public bool _isUsingPooledObjects = false;
+
+    
+
+    void Start()
     {
         objectPooler = ObjectPooler.Instance;
     }
