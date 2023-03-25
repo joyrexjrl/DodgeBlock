@@ -3,26 +3,27 @@ using UnityEngine;
 public class BlockMovement : MonoBehaviour, IPooledObject
 {
     [SerializeField] Rigidbody _blockRb;
-    [SerializeField] float _blockSpeed = 20;
-    [SerializeField] float _gravityScale = 2f;
-    [SerializeField] bool _isReverseBlock = false;
+    [SerializeField] float _blockSpeed = 20f;
+    [SerializeField] float _blockKill = -30f;
 
-    float _blockKill = -30f;
+    ObjectPooler objectPooler;
 
-    public void OnObjectSpawn()
+    void Start()
     {
-
+        objectPooler = ObjectPooler.Instance;
     }
 
     void LateUpdate()
     {
-        MoveTheBlock();
+        _blockRb.velocity = transform.forward * Time.deltaTime * -_blockSpeed;
+        if (transform.position.z < _blockKill)
+        {
+            objectPooler.ReturnToPool(_blockRb.name, gameObject);
+        }
     }
 
-    void MoveTheBlock()
-    {
-        _blockRb.AddForce(0, 0, -_blockSpeed * Time.deltaTime, ForceMode.VelocityChange);
-        //if (_isReverseBlock) _blockRb.AddForce(Vector3.up * _gravityScale * _blockRb.mass, ForceMode.Force);
-        //if (transform.position.z < _blockKill) Destroy(gameObject);    
+    public void OnObjectSpawn()
+    {        
+
     }
 }

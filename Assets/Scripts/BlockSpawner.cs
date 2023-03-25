@@ -4,7 +4,6 @@ public class BlockSpawner : MonoBehaviour
 {
     [SerializeField] Transform[] _spawnPoints;
     [SerializeField] GameObject _obstacle;
-    [SerializeField] GameObject _reverseObstacle;
     [SerializeField] GameObject _jumpBlock;
     [SerializeField] GameObject _reverseJumpBlock;
     [SerializeField] float _timeToSpawn = 2f;
@@ -14,17 +13,15 @@ public class BlockSpawner : MonoBehaviour
 
     public bool _isUsingPooledObjects = false;
 
-    
-
     void Start()
     {
-        objectPooler = ObjectPooler.Instance;
+        objectPooler = ObjectPooler.Instance;        
     }
 
     void FixedUpdate()
     {
         if (!_isReverseBlockSpawner) CallBlock(_obstacle, _jumpBlock);
-        else CallBlock(_reverseObstacle, _reverseJumpBlock);
+        else CallBlock(_obstacle, _reverseJumpBlock);
     }
 
     void CallBlock(GameObject blocks, GameObject jumpBlocks)
@@ -61,7 +58,7 @@ public class BlockSpawner : MonoBehaviour
                     }
                     else
                     {
-                        if (randomIndex != i && _isReverseBlockSpawner) objectPooler.SpawnFromPool("ReverseObstacle", _spawnPoints[i].position, Quaternion.identity);
+                        if (randomIndex != i && _isReverseBlockSpawner) objectPooler.SpawnFromPool("Obstacle", _spawnPoints[i].position, Quaternion.identity);
                         if (randomIndex == i && randomNumber <= 3 && _isReverseBlockSpawner) objectPooler.SpawnFromPool("ReverseJumpObstacle", _spawnPoints[i].position, Quaternion.identity);
                     }
                 }

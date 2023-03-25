@@ -7,15 +7,16 @@ TagManager:
   - Environment
   - Obstacle
   - JumpBox
+  - Barrier
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Environment
-  - 
+  - Barrier
   - 
   - 
   - 

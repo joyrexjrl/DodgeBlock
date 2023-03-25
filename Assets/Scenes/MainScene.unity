@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 616114861}
   - component: {fileID: 616114862}
   - component: {fileID: 616114863}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 1
   m_AngularDrag: 0
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
@@ -542,7 +542,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616114855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 12.7, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -595,6 +595,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _reverseThreshold: 13
   _gravityScale: 15
+--- !u!1 &675133858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 675133862}
+  - component: {fileID: 675133861}
+  - component: {fileID: 675133860}
+  - component: {fileID: 675133859}
+  m_Layer: 7
+  m_Name: PlayerBarrier
+  m_TagString: Barrier
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &675133859
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675133858}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &675133860
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675133858}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &675133861
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675133858}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &675133862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675133858}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 12.6, z: -1}
+  m_LocalScale: {x: 15, y: 25, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +1078,6 @@ MonoBehaviour:
   - {fileID: 1119271506}
   - {fileID: 152160638}
   _obstacle: {fileID: 3540855407010947495, guid: 05c0f788872965142b5d67c3138751fd, type: 3}
-  _reverseObstacle: {fileID: 4305159285392468068, guid: bb0a9e21bbcfdbe49bf9ed8b7dafec98, type: 3}
   _jumpBlock: {fileID: 2024463879122949719, guid: 3d2de89979bf0e3459d7dcf78dd89bbb, type: 3}
   _reverseJumpBlock: {fileID: 4556750669199926516, guid: 9c9d30edae042a5498b73082b287d90d, type: 3}
   _timeToSpawn: 2
@@ -1262,7 +1358,6 @@ MonoBehaviour:
   - {fileID: 547519110}
   - {fileID: 2130490427}
   _obstacle: {fileID: 3540855407010947495, guid: 05c0f788872965142b5d67c3138751fd, type: 3}
-  _reverseObstacle: {fileID: 4305159285392468068, guid: bb0a9e21bbcfdbe49bf9ed8b7dafec98, type: 3}
   _jumpBlock: {fileID: 2024463879122949719, guid: 3d2de89979bf0e3459d7dcf78dd89bbb, type: 3}
   _reverseJumpBlock: {fileID: 4556750669199926516, guid: 9c9d30edae042a5498b73082b287d90d, type: 3}
   _timeToSpawn: 2
@@ -1321,16 +1416,13 @@ MonoBehaviour:
   pools:
   - tag: Obstacle
     prefab: {fileID: 3540855407010947495, guid: 05c0f788872965142b5d67c3138751fd, type: 3}
-    size: 20
+    size: 75
   - tag: JumpObstacle
     prefab: {fileID: 2024463879122949719, guid: 3d2de89979bf0e3459d7dcf78dd89bbb, type: 3}
-    size: 5
-  - tag: ReverseObstacle
-    prefab: {fileID: 4305159285392468068, guid: bb0a9e21bbcfdbe49bf9ed8b7dafec98, type: 3}
     size: 20
   - tag: ReverseJumpObstacle
     prefab: {fileID: 4556750669199926516, guid: 9c9d30edae042a5498b73082b287d90d, type: 3}
-    size: 5
+    size: 20
 --- !u!4 &1737412691
 Transform:
   m_ObjectHideFlags: 0

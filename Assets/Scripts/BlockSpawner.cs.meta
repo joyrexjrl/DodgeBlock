@@ -4,8 +4,10 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - _blockPrefab: {fileID: 3540855407010947495, guid: 05c0f788872965142b5d67c3138751fd, type: 3}
-  - _jumpBlock: {fileID: 2024463879122949719, guid: 3d2de89979bf0e3459d7dcf78dd89bbb, type: 3}
+  - _obstacle: {instanceID: 0}
+  - _reverseObstacle: {instanceID: 0}
+  - _jumpBlock: {instanceID: 0}
+  - _reverseJumpBlock: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
