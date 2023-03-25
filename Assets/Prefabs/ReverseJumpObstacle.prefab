@@ -128,5 +128,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blockRb: {fileID: 4556750669199926511}
-  _blockSpeed: 13000
+  _blockSpeed: 18000
   _blockKill: -30
