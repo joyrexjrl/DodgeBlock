@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
@@ -13,7 +14,7 @@ public class PlayerCollision : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_isInAir) StartCoroutine(RandomSpin());
+        if (_isInAir) RandomSpin();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -44,14 +45,14 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
-    IEnumerator RandomSpin()
+    async void RandomSpin()
     {
         _xSpin = Random.Range(0, 360);
         _ySpin = Random.Range(0, 360);
         _zSpin = Random.Range(0, 360);
         _spinSpeed = Random.Range(1, 3) * Time.deltaTime;
         _rb.AddTorque(_xSpin + _spinSpeed, _ySpin + _spinSpeed, _zSpin + _spinSpeed);
-        yield return new WaitForSeconds(0.5f);
+        await Task.Yield();
         _isInAir = false;
     }
 }
