@@ -10,14 +10,11 @@ public class Score : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] _highScoresArray;
     float _timer = 0;
 
-    List<float> _scoresList = new List<float>();
+    List<float> _scoresList = new();
 
     public float CurrentScore { get { return float.Parse(_currentRunScore.text.Substring(7)); } }
 
-    void Start()
-    {
-        _currentRunScore = _scoreText;
-    }
+    void Start() => _currentRunScore = _scoreText;
 
     void Update()
     {

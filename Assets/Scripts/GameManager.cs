@@ -37,10 +37,7 @@ public class GameManager : MonoBehaviour
         OnPlayerDeath?.Invoke();        
     }
 
-    void OnEnable()
-    {
-        OnPlayerDeath += EnableGameOverMenu;       
-    }
+    void OnEnable() => OnPlayerDeath += EnableGameOverMenu;
 
     void OnDisable()
     {
@@ -56,10 +53,7 @@ public class GameManager : MonoBehaviour
         _currentScore.text = $"Score for this run: {_score.CurrentScore:0.00}";
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
+    public void QuitGame() => Application.Quit();
 
     public void RestartGame()
     {
