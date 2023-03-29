@@ -13,6 +13,7 @@ public class Score : MonoBehaviour
     List<float> _scoresList = new();
 
     public float CurrentScore { get { return float.Parse(_currentRunScore.text.Substring(7)); } }
+    public float ScoreTotal { get; }
 
     void Start() => _currentRunScore = _scoreText;
 
