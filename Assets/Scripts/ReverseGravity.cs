@@ -8,10 +8,7 @@ public class ReverseGravity : MonoBehaviour
     Rigidbody _rb;
     bool _isGravityReversed = false;
 
-    void Awake()
-    {
-        _rb = GetComponent<Rigidbody>();
-    }
+    void Awake() => _rb = GetComponent<Rigidbody>();
 
     void FixedUpdate()
     {

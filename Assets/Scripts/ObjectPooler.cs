@@ -57,7 +57,7 @@ public class ObjectPooler : MonoBehaviour
         objectToSpawn.name = objectToSpawn.name.Replace("(Clone)", "");
 
         IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();
-        if(pooledObj != null) pooledObj.OnObjectSpawn();
+        if(pooledObj != null) pooledObj.OnObjectSpawn();        
 
         poolDictionary[tag].Enqueue(objectToSpawn);
 
