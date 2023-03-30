@@ -8,14 +8,31 @@ public class Score : MonoBehaviour
     [SerializeField] TextMeshProUGUI _scoreText;
     [SerializeField] TextMeshProUGUI _currentRunScore;
     [SerializeField] TextMeshProUGUI[] _highScoresArray;
+
     float _timer = 0;
 
     List<float> _scoresList = new();
 
     public float CurrentScore { get { return float.Parse(_currentRunScore.text.Substring(7)); } }
-    public float ScoreTotal { get; }
 
-    void Start() => _currentRunScore = _scoreText;
+    void Start()
+    {
+        _currentRunScore = _scoreText;
+
+        for (int i = 0; i < _highScoresArray.Length; i++)
+        {
+            if (PlayerPrefs.HasKey($"highscore{i}"))
+            {
+                float score = PlayerPrefs.GetFloat($"highscore{i}");
+                _scoresList.Add(score);
+                _highScoresArray[i].text = $"#{i + 1}: {score:0.00}";
+            }
+            else
+            {
+                _highScoresArray[i].text = "";
+            }
+        }
+    }
 
     void Update()
     {
@@ -26,12 +43,26 @@ public class Score : MonoBehaviour
 
     public void AddCurrentScoreToHighScores()
     {
-        _scoresList.Add(float.Parse(_scoreText.text.Substring(7)));
+        _scoresList.Add(CurrentScore);
         _scoresList.Sort();
         _scoresList.Reverse();
+
+        // Save the high scores into PlayerPrefs
         for (int i = 0; i < _highScoresArray.Length; i++)
         {
-            _highScoresArray[i].text = i < _scoresList.Count ? $"#{i + 1}: {_scoresList[i]:0.00}" : "";
+            if (i < _scoresList.Count)
+            {
+                float score = _scoresList[i];
+                PlayerPrefs.SetFloat($"highscore{i}", score);
+                _highScoresArray[i].text = $"#{i + 1}: {score:0.00}";
+            }
+            else
+            {
+                PlayerPrefs.DeleteKey($"highscore{i}");
+                _highScoresArray[i].text = "";
+            }
         }
+
+        PlayerPrefs.Save();
     }    
 }

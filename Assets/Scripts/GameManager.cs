@@ -12,8 +12,31 @@ public class GameManager : MonoBehaviour
     [SerializeField] Score _score;
 
     bool gameHasEnded = false;
+    float _currentScoreForCurrency;
 
     public static event Action OnPlayerDeath;
+    public float CurrentScoreForCurrency
+    {
+        get => _currentScoreForCurrency;
+        set
+        {
+            _currentScoreForCurrency = value;
+            PlayerPrefs.SetFloat("currentScoreForCurrency", value);
+            PlayerPrefs.Save();
+        }
+    }
+
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("currentScoreForCurrency"))
+        {
+            CurrentScoreForCurrency = PlayerPrefs.GetFloat("currentScoreForCurrency");
+        }
+        else
+        {
+            CurrentScoreForCurrency = 0f;
+        }
+    }
 
     public void EndGame()
     {
@@ -50,7 +73,10 @@ public class GameManager : MonoBehaviour
         _gameOverMenu.SetActive(true);
         _score.AddCurrentScoreToHighScores();
         _score.gameObject.SetActive(false);
+        float currentScoreValue = _score.CurrentScore;
         _currentScore.text = $"Score for this run: {_score.CurrentScore:0.00}";
+        CurrentScoreForCurrency += currentScoreValue;
+        Debug.Log($"current total points earned through gameplay: {CurrentScoreForCurrency}");
     }
 
     public void QuitGame() => Application.Quit();
