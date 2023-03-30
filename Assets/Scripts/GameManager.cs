@@ -73,6 +73,12 @@ public class GameManager : MonoBehaviour
         Debug.Log($"current total points earned through gameplay: {CurrentScoreForCurrency}");
     }
 
+    public void StoreMenu()
+    {
+        _gameOverMenu.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
     public void QuitGame() => Application.Quit();
 
     public void RestartGame()
