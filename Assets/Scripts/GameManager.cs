@@ -28,14 +28,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("currentScoreForCurrency"))
-        {
-            CurrentScoreForCurrency = PlayerPrefs.GetFloat("currentScoreForCurrency");
-        }
-        else
-        {
-            CurrentScoreForCurrency = 0f;
-        }
+        if (PlayerPrefs.HasKey("currentScoreForCurrency")) CurrentScoreForCurrency = PlayerPrefs.GetFloat("currentScoreForCurrency");
+        else CurrentScoreForCurrency = 0f;
     }
 
     public void EndGame()

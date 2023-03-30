@@ -27,10 +27,7 @@ public class Score : MonoBehaviour
                 _scoresList.Add(score);
                 _highScoresArray[i].text = $"#{i + 1}: {score:0.00}";
             }
-            else
-            {
-                _highScoresArray[i].text = "";
-            }
+            else _highScoresArray[i].text = "";
         }
     }
 
@@ -62,7 +59,6 @@ public class Score : MonoBehaviour
                 _highScoresArray[i].text = "";
             }
         }
-
         PlayerPrefs.Save();
     }    
 }
