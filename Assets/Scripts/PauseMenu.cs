@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -9,10 +10,14 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        foreach (InputDevice device in InputSystem.devices)
         {
-            if (gameIsPaused) ResumeGame();
-            else PauseGame();
+            if ((device is Gamepad gamepad && gamepad.startButton.wasPressedThisFrame) ||
+                (device is Keyboard keyboard && keyboard.escapeKey.wasPressedThisFrame))
+            {
+                if (gameIsPaused) ResumeGame();
+                else PauseGame();
+            }
         }
     }
 
