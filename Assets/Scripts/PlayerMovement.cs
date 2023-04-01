@@ -8,12 +8,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _fallDeathHeight = -1f;
     [SerializeField] float _reverseFallDeathHeight = 25.2f;
 
-    PlayerInput playerInput;
+    //PlayerInput playerInput;
     PlayerControl playerContol;
 
     void Awake()
     {
-        playerInput = GetComponent<PlayerInput>();
+        //playerInput = GetComponent<PlayerInput>();
         playerContol = new PlayerControl();
         playerContol.Gameplay.Enable();
     }
