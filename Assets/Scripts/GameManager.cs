@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     public void StoreMenu()
     {
         _gameOverMenu.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void QuitGame() => Application.Quit();

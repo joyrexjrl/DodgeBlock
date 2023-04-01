@@ -31,7 +31,7 @@ public class GameStore : MonoBehaviour
 
     void UpdateSpendablePointsText() => _spendablePoints.text = $"Spendable points: {_currencyPoints:0.00}";
 
-    public void PlayGame() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    public void PlayGame() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     public void PurchaseItem(float cost)
     {
