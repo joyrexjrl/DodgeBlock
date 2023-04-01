@@ -24,13 +24,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 inputVector = playerContol.Gameplay.PlayerMove.ReadValue<Vector2>();
         _rb.AddForce(_sidewaysMovement * Time.fixedDeltaTime * new Vector3(inputVector.x, 0, inputVector.y), ForceMode.VelocityChange);
-        //MovePlayer();
         if (_rb.position.y < _fallDeathHeight || _rb.position.y > _reverseFallDeathHeight) FindObjectOfType<GameManager>().EndGame();
     }
-
-    /*void MovePlayer()
-    {
-        if(Input.GetAxisRaw("Horizontal") > 0) _rb.AddForce(_sidewaysMovement * Time.fixedDeltaTime, 0, 0, ForceMode.VelocityChange);
-        else if(Input.GetAxisRaw("Horizontal") < 0) _rb.AddForce(-_sidewaysMovement * Time.fixedDeltaTime, 0, 0, ForceMode.VelocityChange);        
-    }*/
 }
