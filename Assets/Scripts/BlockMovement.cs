@@ -15,7 +15,7 @@ public class BlockMovement : MonoBehaviour, IPooledObject
 
     void LateUpdate()
     {
-        _blockRb.velocity = transform.forward * Time.deltaTime * -_blockSpeed;
+        _blockRb.velocity = -_blockSpeed * Time.fixedDeltaTime * transform.forward;
         if (transform.position.z < _blockKill) objectPooler.ReturnToPool(_blockRb.name, gameObject);
     }
 
