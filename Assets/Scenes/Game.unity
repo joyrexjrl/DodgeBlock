@@ -1476,6 +1476,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 616114856}
   _movement: {fileID: 616114861}
+  _collisionSpark: {fileID: 2772343124735215042, guid: 9131537d7f5646846b0296c4b3e2a168, type: 3}
+  _sparkOffsetAmount: 0.5
   _jumpForce: 35
   _isReversed: 0
 --- !u!114 &616114863

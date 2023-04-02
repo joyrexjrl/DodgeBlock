@@ -5,11 +5,19 @@ public class PlayerCollision : MonoBehaviour
 {
     [SerializeField] Rigidbody _rb;
     [SerializeField] PlayerMovement _movement;
+    [SerializeField] ParticleSystem _collisionSpark = null;
+    [SerializeField] float _sparkOffsetAmount = 0.1f;
     [SerializeField] float _jumpForce = 20f;
     [SerializeField] bool _isReversed = false;
+    ObjectPooler objectPooler;
 
     float _xSpin, _ySpin, _zSpin, _spinSpeed;
     bool _isInAir = false;
+
+    void Start()
+    {
+        objectPooler = ObjectPooler.Instance;
+    }
 
     void FixedUpdate()
     {
@@ -19,10 +27,35 @@ public class PlayerCollision : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.tag == "Obstacle")
-        {
+        {            
             _movement.enabled = false;
+            SpawnSpark(collision);
             FindObjectOfType<GameManager>().EndGame();
         }
+        if(collision.collider.tag == "Environment")
+        {
+            //SpawnSpark(collision);
+        }
+    }
+
+    void SpawnSpark(Collision collision)
+    {
+        ContactPoint contact = collision.contacts[0];
+        Vector3 offset = contact.normal * _sparkOffsetAmount;
+        Vector3 spawnPos = contact.point + offset;
+
+        int numContacts = collision.contacts.Length;
+        if (numContacts > 1)
+        {
+            ContactPoint contact2 = collision.contacts[numContacts - 1];
+            Vector3 offset2 = contact2.normal * _sparkOffsetAmount;
+            Vector3 spawnPos2 = contact2.point + offset2;
+            spawnPos = (spawnPos + spawnPos2) / 2f;
+        }
+
+        spawnPos.y += (_isReversed) ? -0.5f : 0.5f;
+
+        objectPooler.SpawnFromPool("SparksParticle", spawnPos, Quaternion.identity);
     }
 
     void OnTriggerEnter(Collider trigger)
