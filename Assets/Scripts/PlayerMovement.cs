@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,15 +7,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _fallDeathHeight = -1f;
     [SerializeField] float _reverseFallDeathHeight = 25.2f;
 
-    //PlayerInput playerInput;
     PlayerControl playerContol;
 
-    void Awake()
-    {
-        //playerInput = GetComponent<PlayerInput>();
-        playerContol = new PlayerControl();
-        playerContol.Gameplay.Enable();
-    }
+    void Awake() => playerContol = new PlayerControl();
+
+    void OnEnable() => playerContol.Gameplay.Enable();
+
+    void OnDisable() => playerContol.Gameplay.Disable();
 
     void Update() => Input.GetAxisRaw("Horizontal");
 

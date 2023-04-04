@@ -5,7 +5,6 @@ public class PlayerCollision : MonoBehaviour
 {
     [SerializeField] Rigidbody _rb;
     [SerializeField] PlayerMovement _movement;
-    [SerializeField] ParticleSystem _collisionSpark = null;
     [SerializeField] float _sparkOffsetAmount = 0.1f;
     [SerializeField] float _jumpForce = 20f;
     [SerializeField] bool _isReversed = false;
