@@ -15,8 +15,6 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDisable() => playerContol.Gameplay.Disable();
 
-    void Update() => Input.GetAxisRaw("Horizontal");
-
     void FixedUpdate()
     {
         Vector2 inputVector = playerContol.Gameplay.PlayerMove.ReadValue<Vector2>();
