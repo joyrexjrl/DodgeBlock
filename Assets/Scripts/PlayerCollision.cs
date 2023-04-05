@@ -13,10 +13,7 @@ public class PlayerCollision : MonoBehaviour
     float _xSpin, _ySpin, _zSpin, _spinSpeed;
     bool _isInAir = false;
 
-    void Start()
-    {
-        objectPooler = ObjectPooler.Instance;
-    }
+    void Start() => objectPooler = ObjectPooler.Instance;
 
     void FixedUpdate()
     {
@@ -30,10 +27,6 @@ public class PlayerCollision : MonoBehaviour
             _movement.enabled = false;
             SpawnSpark(collision);
             FindObjectOfType<GameManager>().EndGame();
-        }
-        if(collision.collider.tag == "Environment")
-        {
-            //SpawnSpark(collision);
         }
     }
 
