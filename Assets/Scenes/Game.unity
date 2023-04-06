@@ -1476,7 +1476,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 616114856}
   _movement: {fileID: 616114861}
-  _collisionSpark: {fileID: 2772343124735215042, guid: 9131537d7f5646846b0296c4b3e2a168, type: 3}
   _sparkOffsetAmount: 0.5
   _jumpForce: 35
   _isReversed: 0
@@ -2274,8 +2273,8 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  - component: {fileID: 963194229}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera

@@ -8,10 +8,7 @@ public class BlockMovement : MonoBehaviour, IPooledObject
 
     ObjectPooler objectPooler;
 
-    void Start()
-    {
-        objectPooler = ObjectPooler.Instance;
-    }
+    void Start() => objectPooler = ObjectPooler.Instance;
 
     void LateUpdate()
     {
